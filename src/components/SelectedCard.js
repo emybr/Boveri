@@ -1,13 +1,20 @@
-import Button from 'react-bootstrap/Button';
+import React from 'react'
+import { useParams } from 'react-router-dom'   
 import Card from 'react-bootstrap/Card';
-import  {data}  from './data';
-import { Link } from "react-router-dom";
 
 
-function BasicExample() {
-    return (
-        <div className='container tarjeta' >
-            {data.map((item) => (
+
+
+
+const SelectedCard = (productos) => {
+    const {itemid} = useParams();
+    const item = productos.productos.find((item) => item.id === item.id);
+
+    console.log(itemid)
+    
+return (
+    <div>
+        <div className='container' >
             <Card className='item' key={item.id} style={{ width: '18rem'} }>
                 <Card.Img variant="top" src={item.img} />
                 <Card.Body>
@@ -18,15 +25,17 @@ function BasicExample() {
                     <Card.Text className='item' >
                     $ {item.price}
                     </Card.Text>
-                    <Link to={`/comprar/comprar/${item.id}`}>
-                        <Button  variant="primary">Detalle</Button>
-                    </Link>
                 </Card.Body>
             </Card>
-            ))}
+                
         </div>
-    );
+    </div>
+
+
+    
+    
+
+)
 }
 
-
-export default BasicExample;
+export default SelectedCard
