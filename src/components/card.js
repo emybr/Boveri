@@ -1,13 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from "react-router-dom";    
-import data from './data.json';
 
 
-
-
-
-function BasicExample({}) {
+function BasicExample({data}) {
     return (
         <div className='container tarjeta' >
             {data.map((data) => (
@@ -15,9 +11,6 @@ function BasicExample({}) {
                     <Card.Img variant="top" src={data.img} />
                     <Card.Body>
                         <Card.Title className='item'>{data.nameProduct}</Card.Title>
-                        <Card.Text className='item' >
-                        {data.descripcion}
-                        </Card.Text>
                         <Card.Text className='item' >
                         ${data.price}
                         </Card.Text>

@@ -3,12 +3,12 @@ import Card from './card';
 
 
 
-function ItemListContainer({greeting}) {
+function ItemListContainer({data}) {
     return (
         
         <div className="home_container tarjeta">
-            <h1> {greeting}</h1>
-            <Card />
+            <h1> {}</h1>
+            <Card data={data} />
         </div>
     
     );

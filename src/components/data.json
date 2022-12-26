@@ -1,0 +1,31 @@
+
+[
+	
+	{
+		"id": 1,
+		"img": "https://www.versace.com/dw/image/v2/ABAO_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw76324572/original/90_1004062-1A01703_1B000_10_MedusaVirginWoolOvershirt-Jackets-versace-online-store_3_1.jpg?sw=748&sh=1050&sm=fit",
+		"nameProduct": "Campera",
+		"descripcion": "Buzo/Sudadera de corte oversize, confeccionada en algodón frisado",
+		"descripcion2": " confeccionada en algodón frisado",
+		"price": 1080,
+		"quantity": "1"
+	},
+	{
+		"id": 2,
+		"img": "https://www.moov.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw3f99b682/products/AD_HK2725/AD_HK2725-1.JPG",
+		"nameProduct": "Buzo",
+		"descripcion": "Buzo/Sudadera de corte oversize, confeccionada en algodón frisado",
+		"price": 2050,
+		"quantity": 1
+	},
+	{
+		"id": 3,
+		"img": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+		"nameProduct": "Smartwatch",
+		"descripcion": "Buzo/Sudadera de corte oversize, confeccionada en algodón frisado",
+		"price": 3090,
+		"quantity": "1"
+	}
+	
+	
+]
