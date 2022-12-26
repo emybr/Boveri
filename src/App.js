@@ -1,15 +1,22 @@
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import SelectedCard from './components/SelectedCard';
-import { data } from './components/data';
+import  data  from './components/data.json';
+// import data from './components/data.json';
+import './App.css';
+import { useEffect, useState } from 'react';
+
 
 
 
 
 
 function App() {
-  
+  const [productos, setProductos] = useState([]);
+  useEffect(() => {
+    setProductos(data);}, [])
+
   return (
         
           <div className="App">
@@ -17,10 +24,12 @@ function App() {
               <Navbar />
             </header>
             <main>
+              
               <Routes>
                 <Route path="/" element={""} />
                 <Route path="/productos" element={<ItemListContainer greeting="" />} />
-                <Route path="/comprar/comprar/:itemid" element={<SelectedCard productos={data}/>} />
+                <Route path="/productos/:id" element={<SelectedCard data={productos}/>} />
+                <Route path="*" element={<Navigate to="/"/>} />
               </Routes>
             </main>
           </div>
