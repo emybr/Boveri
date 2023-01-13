@@ -5,29 +5,28 @@ import { Button } from 'react-bootstrap';
 
 
 
+
 const SelectedCard = ({ data }) => {
     let { id } = useParams(); // id 
-    const item = data[id - 1] // data
+    const item = data.filter(item => item.id === id)
+
+
     console.log(item)
+    
 
 
     return (
         <div>
-
-            <Card className='item'  style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={item.img} />
+            <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={item[0].img} />
                 <Card.Body>
-                    <Card.Title className='item'>{item.nameProduct}</Card.Title>
-                    <Card.Text className='item' >
-                        {item.descripcion}
+                    <Card.Title>{item[0].nameProduct}</Card.Title>
+                    <Card.Text>
+                        {item[0].descripción}
                     </Card.Text>
-                    <Card.Text className='item' >
-                        {item.descripcion2}
-                    </Card.Text>
-                        <Button variant="primary">comprar</Button>
+                    <Button variant="primary">comprar</Button>
                 </Card.Body>
             </Card>
-
         </div>
     )
 }
