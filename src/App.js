@@ -1,41 +1,36 @@
 import Navbar from './components/Navbar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/Productos/ItemListContainer';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import SelectedCard from './components/SelectedCard';
-// import  data  from './components/data.json';
 import './App.css';
 import { useEffect, useState } from 'react';
 import {db} from './db/firebase-connfig';
 import { collection, getDocs } from "firebase/firestore";
+import ItemDetail from './components/Productos/ItemDetail';
 
 
 
 
 
-
-// function App() {
-//   const [productos, setProductos] = useState([]);
-//   useEffect(() => {
-//     setProductos(data);}, [])
 
 function App() {
-  const [productos, setProductos] = useState([]);
-  const productosCollection = collection(db,"Productos"); 
- 
 
-  const getProducts = async () => {
-    const data = await getDocs(productosCollection);
-    setProductos(data.docs.map(doc => ({...doc.data(), id: doc.id,}))); 
 
-  
+const [items, setItems] = useState({productos: [], camisas: []});
+const productosCollection = collection(db , "Productos"); 
+const camisasCollection = collection(db , "Camisas");
 
+useEffect(() => {
+  const getItems = async () => {
+    const productosData = await getDocs(productosCollection);
+    const camisasData = await getDocs(camisasCollection);
+    setItems({
+      productos: productosData.docs.map(doc => ({...doc.data(), id: doc.id,})),
+      camisas: camisasData.docs.map(doc => ({...doc.data(), id: doc.id,}))
+    });
   };
 
-
-  useEffect(() => { 
-    getProducts();
-  }, []);
-
+  getItems();
+}, []);
 
 
 
@@ -49,9 +44,10 @@ function App() {
               
               <Routes>
                 <Route path="/" element={""} />
-                <Route path="/productos" element={<ItemListContainer   data={productos}/>} />
-                <Route path="/productos/:id" element={<SelectedCard data={productos}/>} />
-                <Route path="*" element={<Navigate to="/"/>} />
+                <Route path="/productos" element={<ItemListContainer   data={items.productos} />} />
+                <Route path="/productos/:id" element={<ItemDetail data={items.productos} />} />
+                <Route path="/camisas" element={<ItemListContainer data={items.camisas}/>} />
+                <Route path="/camisas/:id" element={<ItemDetail data={items.camisas} />} />
               </Routes>
             </main>
           </div>

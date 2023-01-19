@@ -17,6 +17,9 @@ function CollapsibleExample() {
                 <Link className='productos' to="/productos">
                 <Navbar.Brand >Productos.</Navbar.Brand>
                 </Link>
+                <Link className='camisas' to="/camisas">
+                <Navbar.Brand >Camisas.</Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">   
