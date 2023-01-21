@@ -32,9 +32,10 @@ function CollapsibleExample() {
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
                         />
-                    </Navbar.Brand>
-                    <NavDropdown className='titulo' title="Carrito" id="collasible-nav-dropdown">
-                    </NavDropdown>
+                    </Navbar.Brand>   
+                    <Link to={"/cart"}>
+                    <Navbar.Brand >Carrito</Navbar.Brand>
+                    </Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
