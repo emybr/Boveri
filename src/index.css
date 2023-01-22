@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./imagen/boveri2.jpg)!important;
+  background-size: cover;
 
 }
 
@@ -14,23 +15,6 @@ code {
     monospace;
 }
 
-
-.tarjeta {
-  display: flex;
-  justify-content: space-around;
-  margin: 5%;
-}
-
-.titulo {
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
 .productos {
   text-decoration: none;
-}
-
-.h1 {
-  color: antiquewhite;
 }

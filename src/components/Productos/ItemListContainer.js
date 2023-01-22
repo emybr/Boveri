@@ -1,4 +1,5 @@
 import Items from './Items';
+import './ItemDetail.css';
 
 
 
@@ -6,8 +7,7 @@ import Items from './Items';
 function ItemListContainer({data}) {
     return (
         
-        <div className="home_container tarjeta">
-            <h1> {}</h1>
+        <div >
             <Items data={data} />
         </div>
     

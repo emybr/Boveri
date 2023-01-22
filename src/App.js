@@ -1,22 +1,16 @@
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/Productos/ItemListContainer';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import './App.css';
 import {  useEffect, useState } from 'react';
 import {db} from './db/firebase-connfig';
 import { collection, getDocs } from "firebase/firestore";
 import ItemDetail from './components/Productos/ItemDetail';
-import Cart from './cart/CartContent';
-import { DataContex, DataProvider } from './components/Productos/Contex/DataContex';
+import {  DataProvider } from './components/Productos/Contex/DataContex';
 import CartContent from './cart/CartContent';
 
 
-
-
-
-
 function App() {
-
 
 const [items, setItems] = useState({productos: [], camisas: []});
 const productosCollection = collection(db , "Productos"); 
@@ -35,12 +29,10 @@ useEffect(() => {
   getItems();
 }, []);
 
-
-
   return (
     <DataProvider>
-          <div className="App">
-            <header className="App-header">
+          <div>
+            <header>
               <Navbar />
             </header>
             <main>
@@ -54,9 +46,7 @@ useEffect(() => {
                 </Routes>
             </main>
           </div>
-    </DataProvider>
-      
-      
+    </DataProvider>            
   );
 }
 

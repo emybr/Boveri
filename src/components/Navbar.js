@@ -1,9 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import carrito from '../imagen/carrito.png';
 import { Link } from "react-router-dom";
+
+
 
 
 
@@ -12,13 +13,13 @@ function CollapsibleExample() {
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Link className='productos' to="/">
-                <Navbar.Brand >boveri.</Navbar.Brand>
+                <Navbar.Brand >boveri</Navbar.Brand>
                 </Link>
                 <Link className='productos' to="/productos">
-                <Navbar.Brand >Productos.</Navbar.Brand>
+                <Navbar.Brand >Productos</Navbar.Brand>
                 </Link>
-                <Link className='camisas' to="/camisas">
-                <Navbar.Brand >Camisas.</Navbar.Brand>
+                <Link className='productos' to="/camisas">
+                <Navbar.Brand >Camisas</Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -33,7 +34,7 @@ function CollapsibleExample() {
                             alt="React Bootstrap logo"
                         />
                     </Navbar.Brand>   
-                    <Link to={"/cart"}>
+                    <Link className='productos' to={"/cart"}>
                     <Navbar.Brand >Carrito</Navbar.Brand>
                     </Link>
                 </Navbar.Collapse>

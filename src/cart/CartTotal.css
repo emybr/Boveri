@@ -1,0 +1,6 @@
+.TotalCarrito{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    background-color: darkgray;
+}

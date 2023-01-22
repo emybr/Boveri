@@ -9,9 +9,10 @@ import { dataContex } from '../components/Productos/Contex/DataContex';
 
     const  CartContent  =   ( )   =>   {
     const { cart } = useContext(dataContex);
+    
 
     return cart.length > 0 ? (
-       <> 
+        <> 
         <CartElements/>
         <CartTotal/>
     </>
